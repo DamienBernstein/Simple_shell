@@ -126,8 +126,6 @@ if (strcmp(str[0], "exit") == 0)
 exit(0);
 return (0);
 }
-}
-}
 while (str[0][j] != '\0')
 {
 if (str[0][j] == '/')
@@ -137,7 +135,7 @@ pathtrue = 1;
 }
 ++j;
 }
-
+}
 if (pathtrue == 1)
 {
 str2  = malloc(sizeof(char *) * (slashcount + 2));
