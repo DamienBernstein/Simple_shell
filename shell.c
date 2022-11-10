@@ -165,6 +165,7 @@ break_string(buffer, " ", str);
 			fflush(stdin);
 			free(buffer);
 			free(str);
+			free(str2);
 			main(ac, av, env);
 
 		}
