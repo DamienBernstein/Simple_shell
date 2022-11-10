@@ -135,7 +135,7 @@ pathtrue = 1;
 }
 ++j;
 }
-}
+
 if (pathtrue == 1)
 {
 str2  = malloc(sizeof(char *) * (slashcount + 2));
