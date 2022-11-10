@@ -178,10 +178,9 @@ fflush(stdin);
 free(buffer);
 free(str);
 main(ac, av, env);
-
 }
 }
-
+}
 else
 {
 exists = searchforfunction(str[0], "/bin/");
