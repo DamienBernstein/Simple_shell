@@ -127,7 +127,7 @@ exit(0);
 return (0);
 }
 }
-
+}
 while (str[0][j] != '\0')
 {
 if (str[0][j] == '/')
@@ -140,7 +140,6 @@ pathtrue = 1;
 
 if (pathtrue == 1)
 {
-
 str2  = malloc(sizeof(char *) * (slashcount + 2));
 break_string(str[0], "/", str2);
 exists = searchforfunction(str2[slashcount - 1], "/bin/");
@@ -184,7 +183,7 @@ main(ac, av, env);
 
 }
 }
-}
+
 else
 {
 exists = searchforfunction(str[0], "/bin/");
