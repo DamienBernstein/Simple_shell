@@ -68,7 +68,7 @@ DIR *dr = opendir(directory);
 
 if (dr == NULL)
 {
-printf("Could not open current directory" );
+printf("Could not open current directory");
 return (0);
 }
 
@@ -107,8 +107,7 @@ oldpath = "/bin/";
 
 buffer = malloc(sizeof(char) * size);
 
-do
-{  
+do{
 printf("$ ");
 characters = getline(&buffer, &size, stdin);
 if (characters == -1)
@@ -116,17 +115,17 @@ if (characters == -1)
 printf("\n");
 return (0);
 }
-}
-while (characters == 1);
+}while (characters == 1);
 
 count = count_args(buffer, " ");
 
-str = malloc(sizeof(char *) * count);	
+str = malloc(sizeof(char *) * count);
 break_string(buffer, " ", str);
 if (strcmp(str[0], "exit") == 0)
 {
 exit(0);
 return (0);
+}
 }
 
 while (str[0][j] != '\0')
@@ -165,10 +164,10 @@ main(ac, av, env);
 
 }
 }
-else 
+else
 {
 printf("%s: not found\n", str[0]);
-child_pid = fork();		
+child_pid = fork();
 
 if (child_pid == 0)
 {
@@ -191,7 +190,7 @@ else
 exists = searchforfunction(str[0], "/bin/");
 
 if (exists == 1)
-{	
+{
 path = calloc(strlen(oldpath) + strlen(str[0]) + 1, (sizeof(char)));
 
 strcpy(path, oldpath);
