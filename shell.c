@@ -7,6 +7,12 @@
 #include <sys/wait.h>
 #include <dirent.h>
 
+/**
+ * count_args - counts arguments
+ * @str: string
+ * @delimiter: indicates beginning or end of string
+ * Return: numbers of arguements
+ */
 unsigned int count_args(char *str, char *delimeter)
 {
 unsigned int count;
@@ -27,6 +33,13 @@ free(buffer);
 return (count + 1);
 }
 
+/**
+ * break_string - breaks a string
+ * @str: string
+ * @delimiter: indicates beginning or end of string
+ * @ptr: points to a string
+ * Return: a broken string
+ */
 void break_string(char *str, char *delimeter, char **ptr)
 {
 char *token, *str2;
@@ -51,6 +64,12 @@ token = strtok(NULL, delimeter);
 free(str2);
 }
 
+/**
+ * searchforfunction - searches 
+ * @str: string
+ * @d: path
+ * Return: 0
+ */
 int searchforfunction(char *str, char *directory)
 {
 struct dirent *de;
@@ -72,6 +91,13 @@ closedir(dr);
 return (0);
 }
 
+/**
+ * main - entry point
+ * @ac: arguement count
+ * @av: number of arguements
+ * @env: environment
+ * Return: 0
+ */
 int main(int ac, char **av, char **env)
 {
 char *buffer, **str, *path, *oldpath, **str2;
