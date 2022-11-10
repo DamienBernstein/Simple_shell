@@ -9,24 +9,24 @@
 
 unsigned int count_args(char *str, char *delimeter)
 {
-	unsigned int count;
-	char *buffer;
-	char *token;
+unsigned int count;
+char *buffer;
+char *token;
 
-	buffer = malloc(sizeof(str));
-	strcpy(buffer, str);
+buffer = malloc(sizeof(str));
+strcpy(buffer, str);
 
-	count = 0;
+count = 0;
 
-	token = strtok(buffer, delimeter);
+token = strtok(buffer, delimeter);
 
-	while (token != NULL)
-	{
-		++count;
-		token = strtok(NULL, " ");
-	}
-	free(buffer);
-	return (count + 1);
+while (token != NULL)
+{
+++count;
+token = strtok(NULL, " ");
+}
+free(buffer);
+return (count + 1);
 }
 
 void break_string(char *str, char *delimeter, char **ptr)
