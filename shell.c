@@ -10,7 +10,7 @@
 /**
  * count_args - counts arguments
  * @str: string
- * @delimiter: indicates beginning or end of string
+ * @delimeter: indicates beginning or end of string
  * Return: numbers of arguements
  */
 unsigned int count_args(char *str, char *delimeter)
@@ -36,7 +36,7 @@ return (count + 1);
 /**
  * break_string - breaks a string
  * @str: string
- * @delimiter: indicates beginning or end of string
+ * @delimeter: indicates beginning or end of string
  * @ptr: points to a string
  * Return: a broken string
  */
@@ -67,7 +67,7 @@ free(str2);
 /**
  * searchforfunction - searches 
  * @str: string
- * @d: path
+ * @directory: path
  * Return: 0
  */
 int searchforfunction(char *str, char *directory)
@@ -93,7 +93,7 @@ return (0);
 
 /**
  * main - entry point
- * @ac: arguement count
+ * @ac: counts arguements
  * @av: number of arguements
  * @env: environment
  * Return: 0
