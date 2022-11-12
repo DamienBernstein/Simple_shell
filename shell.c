@@ -65,7 +65,7 @@ free(str2);
 }
 
 /**
- * searchforfunction - searches 
+ * searchforfunction - searches for file/directory
  * @str: string
  * @directory: path
  * Return: 0
