@@ -79,6 +79,7 @@ if (dr == NULL)
 printf("Could not open current directory");
 return (0);
 }
+
 while ((de = readdir(dr)) != NULL)
 {
 if (strcmp(de->d_name, str) == 0)
@@ -105,10 +106,12 @@ size_t size, characters;
 int i, j, status, exists, pathtrue, slashcount;
 unsigned int count;
 pid_t child_pid;
+
 slashcount = 0, pathtrue = 0, i = 0, j = 0;
 size = 32;
 oldpath = "/bin/";
 buffer = malloc(sizeof(char) * size);
+
 do  {
 printf("$ ");
 characters = getline(&buffer, &size, stdin);
@@ -118,6 +121,7 @@ printf("\n");
 return (0);
 }
 } while (characters == 1);
+
 count = count_args(buffer, " ");
 str = malloc(sizeof(char *) * count);
 break_string(buffer, " ", str);
@@ -126,6 +130,7 @@ if (strcmp(str[0], "exit") == 0)
 exit(0);
 return (0);
 }
+
 while (str[0][j] != '\0')
 {
 if (str[0][j] == '/')
@@ -135,11 +140,13 @@ pathtrue = 1;
 }
 ++j;
 }
+
 if (pathtrue == 1)
 {
 str2  = malloc(sizeof(char *) * (slashcount + 2));
 break_string(str[0], "/", str2);
 exists = searchforfunction(str2[slashcount - 1], "/bin/");
+
 if (exists == 1)
 {
 child_pid = fork();
