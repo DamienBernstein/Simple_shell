@@ -172,6 +172,7 @@ if (child_pid == 0)
 {
 execve(str[0], str, env);
 }
+
 if (child_pid != 0)
 {
 wait(&status);
@@ -197,6 +198,7 @@ if (child_pid == 0)
 {
 execve(path, str, env);
 }
+
 if (child_pid != 0)
 {
 wait(&status);
