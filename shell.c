@@ -56,12 +56,12 @@ str2[j] = str[j];
 token = strtok(str2, delimeter);
 while (token != NULL)
 {
-ptr[i] = malloc(sizeof(char) * strlen(token) + 2);
+ptr[i] = malloc(sizeof(char) * strlen(token));
 strcpy(ptr[i], token);
 token = strtok(NULL, delimeter);
 ++i;
 }
-free(str2);
+free(str2);  
 }
 
 /**
@@ -123,7 +123,7 @@ return (0);
 } while (characters == 1);
 
 count = count_args(buffer, " ");
-str = malloc(sizeof(char *) * count + 1);
+str = malloc(sizeof(char *) * count);
 break_string(buffer, " ", str);
 if (strcmp(str[0], "exit") == 0)
 {
@@ -212,7 +212,10 @@ else
 printf("%s: 1: %s: not found\n", av[0], str[0]);
 free(buffer);
 free(str);
-free(str2);
+if (ac < 2)
+{
+main(ac, av, env);
+}
 }
 return (0);
 }
