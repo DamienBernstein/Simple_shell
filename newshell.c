@@ -9,11 +9,11 @@
 
 	
 
-void break_string(char *str, char *delimeter, char **ptr, char **env)
+void break_string(char *str, char *delimeter, char ***ptr3)
 {
-	char *token, *str2;
+	char *token, *str2, **ptr;
 	unsigned int i, j, count;
-	pid_t process_id;
+	ptr = *ptr3;
 
 	j = 0;
 	count  = 1;
@@ -53,7 +53,7 @@ void break_string(char *str, char *delimeter, char **ptr, char **env)
 
 int main(int ac, char **av, char **env)
 {
-	char *buffer, **ptr;
+	char *buffer, ***ptr3, **ptr;
 	
 	int characters;
 	unsigned int args, i;
@@ -68,8 +68,9 @@ int main(int ac, char **av, char **env)
 
 	characters = getline(&buffer, &size, stdin);
 
-	break_string(buffer, " ", ptr, env);
+	break_string(buffer, " ", ptr3);
 	
+	ptr = *ptr3;
 	
 	
 	
