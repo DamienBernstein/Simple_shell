@@ -154,7 +154,7 @@ int main(int ac, char **av, char **env)
 				
 				if (access(buffer_path, X_OK) == 0)
 				{
-					execve(buffer, ptr, env);
+					execve(buffer_path, ptr, env);
 				}
 				else
 				{
