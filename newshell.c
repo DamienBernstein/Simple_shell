@@ -9,14 +9,11 @@
 
 	
 
-void break_string(char *str, char *delimeter, char ***ptr2)
+void break_string(char *str, char *delimeter, char **ptr)
 {
-	char *token, *str2, **ptr;
+	char *token, *str2;
 	unsigned int i, j, count;
 	
-	ptr = NULL;
-	
-	ptr = *ptr2;
 	
 
 	j = 0;
@@ -47,7 +44,7 @@ void break_string(char *str, char *delimeter, char ***ptr2)
 
 	free(str2);  
 	
-	
+	printf("ptr when in function %p\n");
 	
 	
 	
@@ -68,11 +65,13 @@ int main(int ac, char **av, char **env)
 	size = 32;
 	ptr = NULL;
 	buffer = malloc(sizeof(char) * size);
+	
+	printf("ptr when init %p\n");
 	printf("$ ");
 
 	characters = getline(&buffer, &size, stdin);
 
-	break_string(buffer, " ", &ptr);
+	break_string(buffer, " ", ptr);
 	
 	
 	
@@ -85,14 +84,7 @@ int main(int ac, char **av, char **env)
 	
 	free(buffer);
 	
-	i = 0;
-	while (ptr[i] != NULL)
-	{
-	free(ptr[0]);
-		++i;
-	}
-	free(ptr);
-		printf("task complete");
+	
 	
 	return (0);
 	
