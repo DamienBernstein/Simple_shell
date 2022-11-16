@@ -43,7 +43,7 @@ return (count + 1);
 void break_string(char *str, char *delimeter, char **ptr)
 {
 char *token, *str2;
-int i, j;
+ unsigned int i, j;
 
 i = 0;
 j = 0;
