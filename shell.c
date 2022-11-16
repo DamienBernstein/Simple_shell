@@ -30,7 +30,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 		}
 	if (count > 1) 
 		++count;
-	
+	printf("count %d ", count);
 	ptr = malloc(sizeof(char *) * (count + 1));
 	
 	token = strtok(str2, delimeter);
