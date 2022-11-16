@@ -55,7 +55,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 
 	free(str2);  
 	
-	printf("ptr when in function %p\n", ptr);
+	
 	
 	
 	
@@ -88,7 +88,7 @@ int main(int ac, char **av, char **env)
 
 	break_string(buffer, " ", ptr);
 	
-	printf("the pointer value %s", ptr[0]);
+	
 	
 	
 	
