@@ -53,14 +53,15 @@ void break_string(char *str, char *delimeter, char **ptr, char **env)
 	if (process_id > 0)
 	{
 		wait(NULL);
-		printf("task complete");
-	}
-	
-	i = 0;
+		i = 0;
 	while (ptr[i] != NULL)
 		free(ptr[i]);
 	
 	free(ptr);
+		printf("task complete");
+	}
+	
+	
 }
 
 
