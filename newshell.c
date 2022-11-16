@@ -9,11 +9,11 @@
 
 	
 
-void break_string(char *str, char *delimeter, char ***ptr3)
+void break_string(char *str, char *delimeter, char **ptr)
 {
-	char *token, *str2, **ptr;
+	char *token, *str2;
 	unsigned int i, j, count;
-	ptr = *ptr3;
+	
 
 	j = 0;
 	count  = 1;
@@ -53,7 +53,7 @@ void break_string(char *str, char *delimeter, char ***ptr3)
 
 int main(int ac, char **av, char **env)
 {
-	char *buffer, ***ptr3, **ptr;
+	char *buffer, **ptr;
 	
 	int characters;
 	unsigned int args, i;
@@ -68,9 +68,9 @@ int main(int ac, char **av, char **env)
 
 	characters = getline(&buffer, &size, stdin);
 
-	break_string(buffer, " ", ptr3);
+	break_string(buffer, " ", &ptr);
 	
-	ptr = *ptr3;
+	
 	
 	
 	
