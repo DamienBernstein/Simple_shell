@@ -212,7 +212,6 @@ else
 printf("%s: 1: %s: not found\n", av[0], str[0]);
 free(buffer);
 free(str);
-free(path);
 if (ac < 2)
 {
 main(ac, av, env);
