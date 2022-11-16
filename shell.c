@@ -7,9 +7,10 @@
 #include <sys/wait.h>
 #include <dirent.h>
 
-int get_input(char *buffer, size_t size)
+void get_input(char *buffer)
 {
 	int characters;
+	size_t size;
 	
 	do {
 		printf("$ ");
@@ -17,22 +18,23 @@ int get_input(char *buffer, size_t size)
 	if (characters == -1)
 	{
 		printf("\n");
-		return (-1);
+		
 	}
 		} while (characters == 1);
-	return (1);
+	
 	
 }
 
 int main(int ac, char **av, char **env)
 {
 	char *buffer;
-	size_t size;
 	pid_t child_pid;
-	int status;
+	int status, characters;
 	
 	size = 32;
 	buffer = malloc(sizeof(char) * size);
+	get_input(buffer);
+
 	
 	child_pid = fork();
 	if (child_pid == 0)
