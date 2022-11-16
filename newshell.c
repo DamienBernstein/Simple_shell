@@ -85,7 +85,7 @@ int main(int ac, char **av, char **env)
 {
 	char *buffer, **ptr, *PATH, **paths, buffer_path[1024];
 	
-	int characters, j;
+	int characters, j, k;
 	unsigned int args, i, count, countpaths;
 	size_t size;
 	pid_t process_id;
@@ -148,9 +148,19 @@ int main(int ac, char **av, char **env)
 			j = 0;
 			while (paths[j] != NULL)
 			{
-				buffer_path = paths[j] + '/' + ptr[0];
+				strcat(buffer_path, paths[j]);
+				strcat(buffer_path, '/');
+				strcat(buffer_path, ptr[0]);
+				
 				if (access(buffer_path, X_OK) == 0)
+				{
 					execve(buffer, ptr, env);
+				}
+				else
+				{
+					for(k = 0; k < sizeof(buffer); ++k)
+						buffer[k] = 0;
+				}
 				++j;
 			}
 			printf("function not found");
