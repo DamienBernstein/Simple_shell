@@ -211,7 +211,6 @@ printf("%s: 1: %s: not found\n", av[0], str[0]);
 free(buffer);
 free(str);
 free(path);
-free(ptr[i]);
 free(str[0]);
 if (ac < 2)
 {
