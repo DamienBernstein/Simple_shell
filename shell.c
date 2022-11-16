@@ -44,7 +44,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 
 	free(str2);  
 	
-	printf("pointer %s", ptr[0]);		
+	printf("pointer %s", ptr[2]);		
 }
 
 
