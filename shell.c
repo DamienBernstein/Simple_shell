@@ -16,7 +16,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 
 	i = 0;
 	j = 0;
-	count  = 0;
+	count  = 1;
 	str2 = malloc(sizeof(char) * (strlen(str) - 1));
 	while (str[j] != '\n' && str[j] != '\0')
 		{
@@ -25,6 +25,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 			if (str[j] == ' ')
 				++count;
 		}
+	
 	ptr = malloc(sizeof(char *) * (count + 1));
 	
 	token = strtok(str2, delimeter);
