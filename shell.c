@@ -101,6 +101,7 @@ printf("child");
 	{
 		
 		printf("parent");
+		free(buffer);
 		
 	}
 	
