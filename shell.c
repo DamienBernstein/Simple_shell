@@ -102,12 +102,12 @@ return (0);
 int main(int ac, char **av, char **env)
 {
 char *buffer, **str, *path, *oldpath, **str2;
-size_t size, characters;
-int i, j, status, exists, pathtrue, slashcount;
+size_t size;
+int j, status, exists, pathtrue, characters, slashcount;
 unsigned int count;
 pid_t child_pid;
 
-slashcount = 0, pathtrue = 0, i = 0, j = 0;
+slashcount = 0, pathtrue = 0, j = 0;
 size = 32;
 oldpath = "/bin/";
 buffer = malloc(sizeof(char) * size);
@@ -217,4 +217,4 @@ main(ac, av, env);
 }
 return (0);
 }
-}
+
