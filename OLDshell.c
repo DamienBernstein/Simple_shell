@@ -130,6 +130,7 @@ if (strcmp(str[0], "exit") == 0)
 exit(0);
 free(buffer);
 free(str);
+free(str2);
 return (0);
 }
 
@@ -179,6 +180,7 @@ if (child_pid != 0)
 wait(&status);
 free(buffer);
 free(str);
+free(str2);
 main(ac, av, env);
 }
 }
@@ -204,6 +206,7 @@ if (child_pid != 0)
 wait(&status);
 free(buffer);
 free(str);
+free(str2);
 free(path);
 main(ac, av, env);
 }
