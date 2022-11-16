@@ -99,7 +99,10 @@ int main(int ac, char **av, char **env)
 	
 	free(buffer);
 	
-	
+	i = 0;
+	while (ptr[i] != NULL)
+		free(ptr[i]);
+	free(ptr);
 	
 	return (0);
 	
