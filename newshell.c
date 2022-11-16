@@ -148,7 +148,7 @@ int main(int ac, char **av, char **env)
 			j = 0;
 			while (paths[j] != NULL)
 			{
-				buffer_path = path[j] + '/' + ptr[0];
+				buffer_path = paths[j] + '/' + ptr[0];
 				if (access(buffer_path, X_OK) == 0)
 					execve(buffer, ptr, env);
 				++j;
