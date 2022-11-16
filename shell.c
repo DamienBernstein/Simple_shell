@@ -202,6 +202,7 @@ if (child_pid != 0)
 wait(&status);
 free(buffer);
 free(str);
+  free(path);
 main(ac, av, env);
 }
 }
@@ -210,6 +211,7 @@ else
 printf("%s: 1: %s: not found\n", av[0], str[0]);
 free(buffer);
 free(str);
+  free(path);
 if (ac < 2)
 {
 main(ac, av, env);
