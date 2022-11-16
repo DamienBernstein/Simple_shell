@@ -40,6 +40,13 @@ void break_string(char *str, char *delimeter, char **ptr)
 		++i;
 	}
 	free(str2);  
+	
+	while (ptr[i] != NULL)
+	{
+		free(ptr[i]);
+		++i;
+	}
+	free(ptr);
 }
 
 
@@ -65,11 +72,7 @@ int main(int ac, char **av, char **env)
 	
 
 
-	while (ptr[i] != NULL)
-	{
-		free(ptr[i]);
-		++i;
-	}
+	
 	
 	
 	
