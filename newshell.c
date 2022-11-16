@@ -44,7 +44,7 @@ void break_string(char *str, char *delimeter, char ***ptr2)
 
 	free(str2);  
 	
-	printf("ptr when in function %p\n", ptr);
+	printf("ptr when in function %p\n", ptr2);
 	
 	
 	
