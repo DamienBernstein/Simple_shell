@@ -157,7 +157,6 @@ execve(str[0], str, env);
 if (child_pid != 0)
 {
 wait(&status);
-fflush(stdin);
 free(buffer);
 free(str);
 free(str2);
@@ -176,7 +175,6 @@ execve(str[0], str, env);
 if (child_pid != 0)
 {
 wait(&status);
-fflush(stdin);
 free(buffer);
 free(str);
 main(ac, av, env);
@@ -202,7 +200,6 @@ execve(path, str, env);
 if (child_pid != 0)
 {
 wait(&status);
-fflush(stdin);
 free(buffer);
 free(str);
 main(ac, av, env);
