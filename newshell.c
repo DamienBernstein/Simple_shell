@@ -104,6 +104,13 @@ int main(int ac, char **av, char **env)
 			++i;
 		}
 		free(ptr);
+		i = 0;
+		while (paths[i] != NULL)
+		{
+			free(paths[i]);
+			++i;
+		}
+		paths(ptr);
 		return (0);
 	}
 	
@@ -111,7 +118,7 @@ int main(int ac, char **av, char **env)
 	
 	if (process_id == 0)
 	{
-		execve(ptr[0], ptr, env);
+		execve(paths[0], ptr, env);
 		free(buffer);
 	
 		i = 0;
@@ -121,6 +128,14 @@ int main(int ac, char **av, char **env)
 			++i;
 		}
 		free(ptr);
+		i = 0;
+		while (paths[i] != NULL)
+		{
+			free(paths[i]);
+			++i;
+		}
+		paths(ptr);
+		
 	}
 
 	if (process_id > 0)
@@ -135,6 +150,13 @@ int main(int ac, char **av, char **env)
 			++i;
 		}
 		free(ptr);
+		i = 0;
+		while (paths[i] != NULL)
+		{
+			free(paths[i]);
+			++i;
+		}
+		paths(ptr);
 		main(ac, av, env);
 	}
 	
