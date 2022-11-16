@@ -26,12 +26,10 @@ int count_args(char *str)
 
 }
 
-void break_string(char *str, char *delimeter, char **ptr2)
+void break_string(char *str, char *delimeter, char **ptr)
 {
 	char *token, *str2, **ptr;
 	unsigned int i, j;
-	
-	ptr = *ptr2;
 
 	j = 0;
 	str2 = calloc((strlen(str)), sizeof(char));
