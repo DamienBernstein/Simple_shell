@@ -7,22 +7,9 @@
 #include <sys/wait.h>
 #include <dirent.h>
 
-void get_input(char *buffer)
-{
-	int characters;
-	size_t size;
-		
-	size = 32;
-	
-	
-	
 	
 
-		printf("$ ");
-		characters = getline(&buffer, &size, stdin);
 
-		
-}
 
 
 
@@ -32,20 +19,20 @@ int main(int ac, char **av, char **env)
 	pid_t child_pid;
 	int characters;
 	unsigned int args;
-	
+	int characters;
+	size_t size;
+		
+	size = 32;
 	
 	buffer = NULL;
+	printf("$ ");
+	characters = getline(&buffer, &size, stdin);
+
 
 	
-	get_input(buffer);
-	
-	
-
-	
-
 	
 		
-		printf("your input wa");
+	printf("your input wa");
 	
 	
 	
