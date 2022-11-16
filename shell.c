@@ -9,7 +9,33 @@
 
 	
 
+void break_string(char *str, char *delimeter, char **ptr)
+{
+	char *token, *str2;
+	int i, j, count;
 
+	i = 0;
+	j = 0;
+	count  = 0;
+	str2 = malloc(sizeof(char) * (strlen(str) - 1));
+	while (str[j] != '\n' && str[j] != '\0')
+		{
+			str2[j] = str[j];
+			++j;
+			if (str[j] == ' ')
+				++count;
+		}
+	ptr = malloc(sizeof(char *) * (count + 1));
+	token = strtok(str2, delimeter);
+	while (token != NULL)
+	{
+		ptr[i] = malloc(sizeof(char) * strlen(token));
+		strcpy(ptr[i], token);
+		token = strtok(NULL, delimeter);
+		++i;
+	}
+	free(str2);  
+}
 
 
 
@@ -20,18 +46,20 @@ int main(int ac, char **av, char **env)
 	int characters;
 	unsigned int args;
 	size_t size;
+	
+	ptr == NULL;
 		
 	size = 32;
 	
 	buffer = NULL;
 	printf("$ ");
 	characters = getline(&buffer, &size, stdin);
+	
+	break_string(buffer, " ", ptr);
+	
+	printf("first arg %s", ptr[0]);
 
 
-	
-	
-		
-	printf("your input wa");
 	
 	
 	
