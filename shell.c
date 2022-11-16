@@ -7,9 +7,12 @@
 #include <sys/wait.h>
 #include <dirent.h>
 
-void get_input(char *buffer, size_t size)
+void get_input(char *buffer)
 {
 	int characters;
+	size_t size;
+	
+	size = 32;
 	
 	
 	buffer = malloc(sizeof(char) * size);
@@ -24,7 +27,7 @@ void get_input(char *buffer, size_t size)
 		
 	} while (characters == 1);
 	
-	
+	free(buffer);
 }
 
 
@@ -35,14 +38,12 @@ int main(int ac, char **av, char **env)
 	pid_t child_pid;
 	int characters;
 	unsigned int args;
-	size_t size;
 	
-	size = 32;
 	
 	
 
 	
-	get_input(buffer, size);
+	get_input(buffer);
 	
 	
 
@@ -50,10 +51,10 @@ int main(int ac, char **av, char **env)
 
 	
 		
-		printf("your input was:%s\n", buffer);
+		printf("your input wa");
 	
 	
-		free(buffer);
+	
 	
 	
 	
