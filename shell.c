@@ -37,7 +37,7 @@ int main(int ac, char **av, char **env)
 	child_pid = fork();
 	if (child_pid == 0)
 {
-execve(buffer, buffer, env);
+execve("/bin/", buffer, env);
 }
 	else
 	{
