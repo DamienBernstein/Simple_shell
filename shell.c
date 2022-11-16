@@ -23,7 +23,10 @@ void break_string(char *str, char *delimeter, char **ptr)
 			str2[j] = str[j];
 			++j;
 			if (str[j] == ' ')
+			{
+				printf("count %d ", count);
 				++count;
+			}
 		}
 	
 	ptr = malloc(sizeof(char *) * (count + 1));
