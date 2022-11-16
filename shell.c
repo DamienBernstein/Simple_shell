@@ -60,9 +60,9 @@ ptr[i] = malloc(sizeof(char) * strlen(token));
 strcpy(ptr[i], token);
 token = strtok(NULL, delimeter);
 ++i;
+free(ptr[i]);
 }
 free(str2);  
-free(ptr[i]);
 }
 
 /**
