@@ -47,7 +47,7 @@ int main(int ac, char **av, char **env)
 	unsigned int args;
 	size_t size;
 	
-	ptr == NULL;
+
 		
 	size = 32;
 	
