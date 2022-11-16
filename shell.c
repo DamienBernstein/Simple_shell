@@ -113,7 +113,7 @@ oldpath = "/bin/";
 buffer = malloc(sizeof(char) * size);
 
 do  {
-printf("$ ");
+printf("$");
 characters = getline(&buffer, &size, stdin);
 if (characters == -1)
 {
