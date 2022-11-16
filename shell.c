@@ -19,7 +19,7 @@ unsigned int count;
 char *buffer;
 char *token;
 
-buffer = malloc(sizeof(str) + 1);
+buffer = malloc(sizeof(str));
 strcpy(buffer, str);
 count = 0;
 token = strtok(buffer, delimeter);
@@ -61,8 +61,7 @@ strcpy(ptr[i], token);
 token = strtok(NULL, delimeter);
 ++i;
 }
-free(str2);
-free(ptr[i]);
+free(str2);  
 }
 
 /**
@@ -194,14 +193,26 @@ strcpy(path, oldpath);
 strcat(path, str[0]);
 str[0] = malloc(sizeof(path));
 strcpy(str[0], path);
+child_pid = fork();
+if (child_pid == 0)
+{
+execve(path, str, env);
+}
+
+if (child_pid != 0)
+{
+wait(&status);
+free(buffer);
+free(str);
+free(path);
+main(ac, av, env);
+}
 }
 else
 {
 printf("%s: 1: %s: not found\n", av[0], str[0]);
 free(buffer);
 free(str);
-free(path);
-free(str[0]);
 if (ac < 2)
 {
 main(ac, av, env);
