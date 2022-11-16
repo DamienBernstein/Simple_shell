@@ -7,31 +7,21 @@
 #include <sys/wait.h>
 #include <dirent.h>
 
-void *get_input(char *buffer)
+void get_input(char *buffer)
 {
 	int characters;
 	size_t size;
-	char buf[1024] = 0;
-
-	
+		
 	size = 32;
 	
 	
-	buffer = malloc(sizeof(char) * size);
 	
-	do {
+	
+
 		printf("$ ");
 		characters = getline(&buffer, &size, stdin);
-		if (characters == -1)
-		{
-		printf("\n");
-		}
+
 		
-	} while (characters == 1);
-	
-	strcpy(buf, buffer);
-	free(buffer);
-	return (buf);
 }
 
 
@@ -44,10 +34,10 @@ int main(int ac, char **av, char **env)
 	unsigned int args;
 	
 	
-	
+	buffer = NULL;
 
 	
-	buf = get_input(buffer);
+	get_input(buffer);
 	
 	
 
@@ -60,8 +50,8 @@ int main(int ac, char **av, char **env)
 	
 	
 	
-	free(str3);
 	
+	free(buffer);
 	
 	return (0);
 	
