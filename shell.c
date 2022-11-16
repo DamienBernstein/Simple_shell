@@ -7,7 +7,7 @@
 #include <sys/wait.h>
 #include <dirent.h>
 
-void get_input(char *buffer, size_t size)
+void get_input(char *buffer)
 {
 	int characters;
 	size_t size;
