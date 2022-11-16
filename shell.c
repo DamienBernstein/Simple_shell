@@ -210,7 +210,7 @@ main(ac, av, env);
 }
 else
 {
-printf("%s: 1: %s: not found\n",av[0], str[0]);
+printf("%s: 1: %s: not found\n", av[0], str[0]);
 free(buffer);
 free(str);
 main(ac, av, env);
