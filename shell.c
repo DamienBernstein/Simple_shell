@@ -64,13 +64,7 @@ int main(int ac, char **av, char **env)
 	break_string(buffer, " ", ptr);
 	
 		
-	i = 0;
-	while (ptr[i] != NULL)
-	{
-		free(ptr[i]);
-		++i;
-	}
-	free(ptr);
+	
 	
 	
 	free(buffer);
