@@ -44,7 +44,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 
 	free(str2);  
 	
-	printf("ptr when in function %p\n");
+	printf("ptr when in function %p\n", ptr);
 	
 	
 	
@@ -66,7 +66,7 @@ int main(int ac, char **av, char **env)
 	ptr = NULL;
 	buffer = malloc(sizeof(char) * size);
 	
-	printf("ptr when init %p\n");
+	printf("ptr when init %p\n", ptr);
 	printf("$ ");
 
 	characters = getline(&buffer, &size, stdin);
