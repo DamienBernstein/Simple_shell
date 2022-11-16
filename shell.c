@@ -68,7 +68,7 @@ int main(int ac, char **av, char **env)
 		
 	i = 0;
 	
-		printf("ptr[i]: %s", ptr[i]);
+	
 
 	
 	free(ptr);
