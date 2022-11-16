@@ -9,10 +9,11 @@
 
 	
 
-void break_string(char *str, char *delimeter, char **ptr)
+void break_string(char *str, char *delimeter, char **ptr, char **env)
 {
 	char *token, *str2;
 	unsigned int i, j, count;
+	pid_t process_id;
 
 	j = 0;
 	count  = 1;
@@ -29,11 +30,9 @@ void break_string(char *str, char *delimeter, char **ptr)
 
 	
 	ptr = malloc(sizeof(char *) * (count + 1));
-	
 	token = strtok(str2, delimeter);
 	
 	i = 0;
-	
 	while (token != NULL)
 	{
 		ptr[i] = malloc(sizeof(char) * (strlen(token) + 1));
@@ -44,7 +43,24 @@ void break_string(char *str, char *delimeter, char **ptr)
 
 	free(str2);  
 	
-	printf("pointer %s", ptr[2]);		
+	process_id = fork();
+	
+	if (process_id == 0)
+	{
+		execve(ptr[0], ptr, env); 
+	}
+	
+	if (process_id > 0)
+	{
+		wait(NULL);
+		printf("task complete");
+	}
+	
+	i = 0;
+	while (ptr[i] != NULL)
+		free(ptr[i]);
+	
+	free(ptr);
 }
 
 
@@ -52,7 +68,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 int main(int ac, char **av, char **env)
 {
 	char *buffer, **ptr;
-	pid_t child_pid;
+	
 	int characters;
 	unsigned int args, i;
 	size_t size;
@@ -66,7 +82,7 @@ int main(int ac, char **av, char **env)
 
 	characters = getline(&buffer, &size, stdin);
 
-	break_string(buffer, " ", ptr);
+	break_string(buffer, " ", ptr, env);
 	
 	
 	
