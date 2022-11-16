@@ -43,7 +43,7 @@ return (count + 1);
 void break_string(char *str, char *delimeter, char **ptr)
 {
 char *token, *str2;
- unsigned int i, j;
+int i, j;
 
 i = 0;
 j = 0;
@@ -103,8 +103,8 @@ int main(int ac, char **av, char **env)
 {
 char *buffer, **str, *path, *oldpath, **str2;
 size_t size;
-int j, status, exists, pathtrue, characters, slashcount;
-unsigned int count;
+int j, status, exists, pathtrue, slashcount;
+unsigned int count, characters;
 pid_t child_pid;
 
 slashcount = 0, pathtrue = 0, j = 0;
