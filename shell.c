@@ -64,7 +64,9 @@ int main(int ac, char **av, char **env)
 	break_string(buffer, " ", ptr);
 	
 		
+	i = 0;
 	
+	free(ptr);
 	
 	
 	free(buffer);
