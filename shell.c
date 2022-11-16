@@ -57,12 +57,13 @@ printf("child");
 	{
 		
 		printf("parent");
+		free(buffer);
 	
 		
 	}
 	
 	
-	free(buffer);
+	
 	return (0);
 	
 }
