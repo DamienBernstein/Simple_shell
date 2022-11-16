@@ -62,7 +62,7 @@ printf("child");
 	}
 	
 	
-	
+	free(buffer);
 	return (0);
 	
 }
