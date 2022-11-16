@@ -177,5 +177,3 @@ execve(str[0], str, env);
 }
 }
 }
-}
-}
