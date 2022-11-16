@@ -202,8 +202,6 @@ if (child_pid != 0)
 wait(&status);
 free(buffer);
 free(str);
-free(path);
-free(str[0]);
 main(ac, av, env);
 }
 }
