@@ -14,6 +14,8 @@ void get_input(char *buffer)
 	
 	size = 32;
 	
+	buffer = malloc(sizeof(char) * size);
+	
 	do {
 		printf("$ ");
 		characters = getline(&buffer, &size, stdin);
@@ -34,7 +36,7 @@ int main(int ac, char **av, char **env)
 	int status, characters;
 	
 
-	buffer = malloc(sizeof(char) * size);
+	
 	get_input(buffer);
 
 	
