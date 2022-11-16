@@ -28,9 +28,11 @@ void break_string(char *str, char *delimeter, char **ptr)
 		}
 
 	
-	ptr = malloc(sizeof(char *) * (count + 2));
+	ptr = malloc(sizeof(char *) * (count + 1));
 	
 	token = strtok(str2, delimeter);
+	
+	i = 0;
 	
 	while (token != NULL)
 	{
