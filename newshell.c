@@ -63,7 +63,7 @@ int main(int ac, char **av, char **env)
 
 		
 	size = 32;
-	ptr = NULL;
+	
 	buffer = malloc(sizeof(char) * size);
 	
 	printf("ptr when init %p\n", ptr);
