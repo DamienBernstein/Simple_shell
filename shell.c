@@ -43,23 +43,14 @@ void break_string(char *str, char *delimeter, char **ptr, char **env)
 
 	free(str2);  
 	
-	process_id = fork();
 	
-	if (process_id == 0)
-	{
-		execve(ptr[0], ptr, env); 
-	}
-	
-	if (process_id > 0)
-	{
-		wait(NULL);
 		i = 0;
 	while (ptr[i] != NULL)
 		free(ptr[i]);
 	
 	free(ptr);
 		printf("task complete");
-	}
+	
 	
 	
 }
