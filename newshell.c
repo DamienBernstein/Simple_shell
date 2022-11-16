@@ -7,30 +7,43 @@
 #include <sys/wait.h>
 #include <dirent.h>
 
-	
-
-void break_string(char *str, char *delimeter, char ***ptr2)
+int count_args(char *str)
 {
-	char *token, *str2, **ptr;
-	unsigned int i, j, count;
+	int count, j;
 	
-	ptr = *ptr2;
-
+	count = 1;
 	j = 0;
-	count  = 1;
-	str2 = calloc((strlen(str)), sizeof(char));
+	
 	while (str[j] != '\n' && str[j] != '\0')
 		{
-			str2[j] = str[j];
 			++j;
 			if (str[j] == ' ')
 			{				
 				++count;
 			}
 		}
+	return(count);
+
+}
+
+void break_string(char *str, char *delimeter, char ***ptr2)
+{
+	char *token, *str2, **ptr;
+	unsigned int i, j;
+	
+	ptr = *ptr2;
+
+	j = 0;
+	str2 = calloc((strlen(str)), sizeof(char));
+	while (str[j] != '\n' && str[j] != '\0')
+		{
+			str2[j] = str[j];
+			++j;
+			
+		}
 
 	
-	ptr = calloc((count + 1), sizeof(char *));
+	
 	token = strtok(str2, delimeter);
 	
 	i = 0;
@@ -57,7 +70,7 @@ int main(int ac, char **av, char **env)
 	char *buffer, **ptr;
 	
 	int characters;
-	unsigned int args, i;
+	unsigned int args, i, count;
 	size_t size;
 	
 
@@ -70,8 +83,12 @@ int main(int ac, char **av, char **env)
 	printf("$ ");
 
 	characters = getline(&buffer, &size, stdin);
+	
+	count = count_args(buffer);
+	
+	ptr = calloc((count + 1), sizeof(char *));
 
-	break_string(buffer, " ", &ptr);
+	break_string(buffer, " ", ptr);
 	
 	
 	
