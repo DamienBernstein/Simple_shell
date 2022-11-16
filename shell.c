@@ -19,7 +19,6 @@ int main(int ac, char **av, char **env)
 	pid_t child_pid;
 	int characters;
 	unsigned int args;
-	int characters;
 	size_t size;
 		
 	size = 32;
