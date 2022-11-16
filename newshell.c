@@ -151,7 +151,7 @@ int main(int ac, char **av, char **env)
 				strcat(buffer_path, "/");
 				strcat(buffer_path, paths[j]);
 				strcat(buffer_path, ptr[0]);
-				
+				printf("buffer_path: %s", buffer_path);
 				if (access(buffer_path, X_OK) == 0)
 				{
 					execve(buffer_path, ptr, env);
