@@ -98,7 +98,7 @@ printf("child");
 	if (child_pid != 0)
 	{
 		wait(&status);
-		print("parent");
+		printf("parent");
 		free(buffer);
 	}
 	
