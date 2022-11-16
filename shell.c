@@ -14,7 +14,6 @@ void break_string(char *str, char *delimeter, char **ptr)
 	char *token, *str2;
 	unsigned int i, j, count;
 
-	i = 0;
 	j = 0;
 	count  = 1;
 	str2 = malloc(sizeof(char) * (strlen(str) - 1));
@@ -41,13 +40,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 	}
 	free(str2);  
 	
-	i = 0;
-	while (ptr[i] != NULL)
-	{
-		free(ptr[i]);
-		++i;
-	}
-	free(ptr);
+	
 }
 
 
@@ -61,7 +54,7 @@ int main(int ac, char **av, char **env)
 	size_t size;
 	
 
-	i = 0;	
+		
 	size = 32;
 	
 	buffer = NULL;
@@ -71,7 +64,13 @@ int main(int ac, char **av, char **env)
 	break_string(buffer, " ", ptr);
 	
 		
-	
+	i = 0;
+	while (ptr[i] != NULL)
+	{
+		free(ptr[i]);
+		++i;
+	}
+	free(ptr);
 	
 	
 	free(buffer);
