@@ -88,7 +88,7 @@ int main(int ac, char **av, char **env)
 	
 	if (process_id == 0)
 	{
-		execve(str[0], str, env);
+		execve(ptr[0], ptr, env);
 	}
 	if (process_id > 0)
 	{
