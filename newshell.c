@@ -7,7 +7,7 @@
 #include <sys/wait.h>
 #include <dirent.h>
 
-int count_args(char *str)
+int count_args(char *str, char c)
 {
 	int count, j;
 	
@@ -17,7 +17,7 @@ int count_args(char *str)
 	while (str[j] != '\n' && str[j] != '\0')
 		{
 			++j;
-			if (str[j] == ' ')
+			if (str[j] == c)
 			{				
 				++count;
 			}
@@ -61,10 +61,10 @@ void break_string(char *str, char *delimeter, char **ptr)
 
 int main(int ac, char **av, char **env)
 {
-	char *buffer, **ptr, *PATH;
+	char *buffer, **ptr, *PATH, **paths;
 	
 	int characters;
-	unsigned int args, i, count;
+	unsigned int args, i, count, countpaths;
 	size_t size;
 	pid_t process_id;
 	
@@ -72,6 +72,12 @@ int main(int ac, char **av, char **env)
 	
 	printf("path %s\n", PATH);
 	
+	countpaths = count_args(PATH, ':');
+	
+	paths = calloc((countpaths + 1), sizeof(char *));
+	break_string(PATH, ":", paths);
+	
+	printf("path %s\n", paths[0]);
 
 		
 	size = 32;
@@ -82,7 +88,7 @@ int main(int ac, char **av, char **env)
 
 	characters = getline(&buffer, &size, stdin);
 	
-	count = count_args(buffer);
+	count = count_args(buffer, ' ');
 	
 	ptr = calloc((count + 1), sizeof(char *));
 
