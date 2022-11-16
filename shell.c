@@ -98,10 +98,11 @@ printf("child");
 	else
 	{
 		wait(&status);
+		free(buffer);
 	}
 	
 	
-	free(buffer);
+	
 	
 	return (0);
 	
