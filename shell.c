@@ -39,7 +39,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 		token = strtok(NULL, delimeter);
 		++i;
 	}
-	strcpy(ptr[i], token);
+	ptr[i] = NULL;
 	free(str2);  
 	
 	
