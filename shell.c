@@ -41,6 +41,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 	}
 	free(str2);  
 	
+	i = 0;
 	while (ptr[i] != NULL)
 	{
 		free(ptr[i]);
@@ -53,7 +54,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 
 int main(int ac, char **av, char **env)
 {
-	char *buffer, **ptr, *str3, buf[1024];
+	char *buffer, **ptr;
 	pid_t child_pid;
 	int characters, i;
 	unsigned int args;
@@ -69,11 +70,7 @@ int main(int ac, char **av, char **env)
 	
 	break_string(buffer, " ", ptr);
 	
-	
-
-
-	
-	
+		
 	
 	
 	
