@@ -214,10 +214,6 @@ free(buffer);
 free(str);
 free(str2);
 }
-if (ac == av[0])
-{
-return (0);
-}
 return (0);
 }
 return (0);
