@@ -28,13 +28,13 @@ void break_string(char *str, char *delimeter, char **ptr)
 		}
 
 	
-	ptr = malloc(sizeof(char *) * (count + 1));
+	ptr = malloc(sizeof(char *) * (count + 2));
 	
 	token = strtok(str2, delimeter);
 	
 	while (token != NULL)
 	{
-		ptr[i] = malloc(sizeof(char) * (strlen(token) + 1));
+		ptr[i] = malloc(sizeof(char *) * (strlen(token) + 1));
 		strcpy(ptr[i], token);
 		token = strtok(NULL, delimeter);
 		++i;
