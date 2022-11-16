@@ -67,9 +67,9 @@ int main(int ac, char **av, char **env)
 	break_string(buffer, " ", ptr);
 	
 		
-	i = 0;
 	
-	printf("pointer %s", ptr[0]);
+	
+	printf("pointer %s", *ptr);
 
 	
 	free(ptr);
