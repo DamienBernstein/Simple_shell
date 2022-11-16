@@ -12,7 +12,6 @@ void get_input(char *buffer, size_t size)
 	int characters;
 	
 	
-	
 	buffer = malloc(sizeof(char) * size);
 	
 	do {
@@ -48,23 +47,14 @@ int main(int ac, char **av, char **env)
 	
 
 	
-	child_pid = fork();
-	if (child_pid == 0)
-{
-printf("child");
-		free(buffer);
-		exit(0);
-	
-}
-	if (child_pid != 0)
-	{
-		
-		printf("parent");
-		free(buffer);
-		return (0);
+
 	
 		
-	}
+		printf("your input was:%s\n", buffer);
+	
+	
+		free(buffer);
+	
 	
 	
 	
