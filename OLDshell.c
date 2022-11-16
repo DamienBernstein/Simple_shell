@@ -56,7 +56,7 @@ str2[j] = str[j];
 token = strtok(str2, delimeter);
 while (token != NULL)
 {
-ptr[i] = malloc(sizeof(char) * strlen(token));
+ptr[i] = malloc(sizeof(char) * strlen(token) + 1);
 strcpy(ptr[i], token);
 token = strtok(NULL, delimeter);
 ++i;
