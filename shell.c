@@ -177,41 +177,4 @@ execve(str[0], str, env);
 
 
 
-if (exists == 1)
-{
-path = calloc(strlen(oldpath) + strlen(str[0]) + 1, (sizeof(char)));
-strcpy(path, oldpath);
-strcat(path, str[0]);
-str[0] = malloc(sizeof(path));
-strcpy(str[0], path);
-child_pid = fork();
-if (child_pid == 0)
-{
-execve(path, str, env);
-}
 
-if (child_pid != 0)
-{
-wait(&status);
-free(buffer);
-free(str);
-free(path);
-free(str[0]);
-main(ac, av, env);
-}
-}
-else
-{
-printf("%s: 1: %s: not found\n", av[0], str[0]);
-free(buffer);
-free(str);
-if (ac < 2)
-{
-main(ac, av, env);
-}
-}
-return (0);
-}
-return (0);
-}
-}
