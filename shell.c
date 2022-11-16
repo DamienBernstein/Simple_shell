@@ -103,8 +103,8 @@ int main(int ac, char **av, char **env)
 {
 char *buffer, **str, *path, *oldpath, **str2;
 size_t size;
-int j, status, exists, pathtrue, slashcount;
-unsigned int count, characters;
+int j, status, exists, pathtrue, characters, slashcount;
+unsigned int count;
 pid_t child_pid;
 
 slashcount = 0, pathtrue = 0, j = 0;
