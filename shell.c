@@ -24,12 +24,12 @@ void break_string(char *str, char *delimeter, char **ptr)
 			++j;
 			if (str[j] == ' ')
 			{
-				printf("count %d ", count);
+				
 				++count;
+				printf("count %d ", count);
 			}
 		}
-	if (count > 1) 
-		++count;
+
 	printf("count %d ", count);
 	ptr = malloc(sizeof(char *) * (count + 1));
 	
