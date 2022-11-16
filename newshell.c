@@ -88,7 +88,7 @@ int main(int ac, char **av, char **env)
 
 	break_string(buffer, " ", ptr);
 	
-	
+	printf("the pointer value %s", ptr[0]);
 	
 	
 	
