@@ -51,8 +51,8 @@ int main(int ac, char **av, char **env)
 {
 	char *buffer, **ptr;
 	pid_t child_pid;
-	int characters, i;
-	unsigned int args;
+	int characters;
+	unsigned int args, i;
 	size_t size;
 	
 
@@ -67,12 +67,10 @@ int main(int ac, char **av, char **env)
 	
 		
 	i = 0;
-	while (ptr[i] != NULL)
-	{
+	
 		printf("ptr[i]: %s", ptr[i]);
-		free(ptr[i]);
-		++i;
-	}
+
+	
 	free(ptr);
 	
 	
