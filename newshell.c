@@ -9,10 +9,14 @@
 
 	
 
-void break_string(char *str, char *delimeter, char ***ptr)
+void break_string(char *str, char *delimeter, char ***ptr2)
 {
-	char *token, *str2;
+	char *token, *str2, **ptr;
 	unsigned int i, j, count;
+	
+	ptr = NULL;
+	
+	ptr = *ptr2;
 	
 
 	j = 0;
