@@ -23,23 +23,22 @@ void break_string(char *str, char *delimeter, char **ptr)
 			str2[j] = str[j];
 			++j;
 			if (str[j] == ' ')
-			{
-				
+			{				
 				++count;
-				printf("count %d ", count);
 			}
 		}
 
-	printf("count %d ", count);
+	
 	ptr = malloc(sizeof(char *) * (count + 1));
 	
 	token = strtok(str2, delimeter);
-	printf("first one: %s", token);
+	printf("first one: %s\n", token);
 	while (token != NULL)
 	{
 		ptr[i] = malloc(sizeof(char) * strlen(token));
 		strcpy(ptr[i], token);
 		token = strtok(NULL, delimeter);
+		printf("next: %s\n", ptr[i]);
 		++i;
 	}
 	free(str2);  
