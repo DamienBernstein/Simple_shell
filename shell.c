@@ -19,7 +19,7 @@ unsigned int count;
 char *buffer;
 char *token;
 
-buffer = malloc(sizeof(str));
+buffer = malloc(sizeof(str) + 1);
 strcpy(buffer, str);
 count = 0;
 token = strtok(buffer, delimeter);
