@@ -26,7 +26,7 @@ int count_args(char *str)
 
 }
 
-void break_string(char *str, char *delimeter, char ***ptr2)
+void break_string(char *str, char *delimeter, char **ptr2)
 {
 	char *token, *str2, **ptr;
 	unsigned int i, j;
