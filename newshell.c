@@ -69,7 +69,7 @@ int main(int ac, char **av, char **env)
 	pid_t process_id;
 	
 
-		
+	do {	
 	size = 32;
 	
 	buffer = malloc(sizeof(char) * size);
@@ -113,7 +113,7 @@ int main(int ac, char **av, char **env)
 		free(ptr);
 	}
 	
-	
+	} while (strcmp(ptr[0], "exit") != 0);
 	return (0);
 	
 }
