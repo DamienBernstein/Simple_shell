@@ -28,6 +28,8 @@ void break_string(char *str, char *delimeter, char **ptr)
 				++count;
 			}
 		}
+	if (count > 1) 
+		++count;
 	
 	ptr = malloc(sizeof(char *) * (count + 1));
 	
