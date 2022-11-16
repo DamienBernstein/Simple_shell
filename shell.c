@@ -85,7 +85,7 @@ int main(int ac, char **av, char **env)
 	
 
 	
-	get_input(buffer);
+	get_input(buffer, size);
 	
 	
 
