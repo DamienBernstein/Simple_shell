@@ -110,7 +110,7 @@ int main(int ac, char **av, char **env)
 			free(paths[i]);
 			++i;
 		}
-		paths(ptr);
+		free(paths);
 		return (0);
 	}
 	
@@ -134,7 +134,7 @@ int main(int ac, char **av, char **env)
 			free(paths[i]);
 			++i;
 		}
-		paths(ptr);
+		free(paths);
 		
 	}
 
@@ -156,7 +156,7 @@ int main(int ac, char **av, char **env)
 			free(paths[i]);
 			++i;
 		}
-		paths(ptr);
+		free(paths);
 		main(ac, av, env);
 	}
 	
