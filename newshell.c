@@ -68,6 +68,10 @@ int main(int ac, char **av, char **env)
 	size_t size;
 	pid_t process_id;
 	
+	PATH = getenv("PATH");
+	
+	printf("path %s\n", PATH);
+	
 
 		
 	size = 32;
