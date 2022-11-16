@@ -209,13 +209,10 @@ main(ac, av, env);
 }
 else
 {
-printf("%s: 1: %s: not found\n", av[0], str[0]);
+printf("%s: 1: %s: not found", av[0], str[0]);
 free(buffer);
 free(str);
-if (ac < 2)
-{
-main(ac, av, env);
-}
+free(str2);
 }
 return (0);
 }
