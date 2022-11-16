@@ -85,19 +85,14 @@ int main(int ac, char **av, char **env)
 
 	
 	get_input(buffer);
-	args = count_args(buffer, " ");
 	
-	ptr = malloc(sizeof(char *) * (args + 1));
-
-	
-	break_string(buffer, " ", ptr);
 	
 
 	
 	child_pid = fork();
 	if (child_pid == 0)
 {
-execve("/bin/", ptr, env);
+printf("child");
 }
 	else
 	{
