@@ -210,7 +210,7 @@ main(ac, av, env);
 }
 else
 {
-printf("%s: No such file or directory\n", str[0]);
+printf("%s: not found\n", str[0]);
 free(buffer);
 free(str);
 main(ac, av, env);
