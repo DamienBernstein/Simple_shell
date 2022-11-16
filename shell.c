@@ -9,6 +9,8 @@
 
 int get_input(char *buffer, size_t size)
 {
+	int characters;
+	
 	do {
 		printf("$ ");
 		characters = getline(&buffer, &size, stdin);
