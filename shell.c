@@ -71,7 +71,7 @@ int main(int ac, char **av, char **env)
 		++i;
 	}
 	
-	free(ptr);
+	
 	
 	
 	free(buffer);
