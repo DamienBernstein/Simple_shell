@@ -55,10 +55,6 @@ void break_string(char *str, char *delimeter, char **ptr)
 
 	free(str2);  
 	
-	
-	
-	
-	
 }
 
 
@@ -70,13 +66,13 @@ int main(int ac, char **av, char **env)
 	int characters;
 	unsigned int args, i, count;
 	size_t size;
+	pid_t process_id;
 	
 
 		
 	size = 32;
 	
 	buffer = malloc(sizeof(char) * size);
-	
 	
 	printf("$ ");
 
@@ -88,16 +84,16 @@ int main(int ac, char **av, char **env)
 
 	break_string(buffer, " ", ptr);
 	
+	process_id = fork();
 	
-	
-	
-	
-
-
-	
-		
-	
-	free(buffer);
+	if (process_id == 0)
+	{
+		execve(str[0], str, env);
+	}
+	if (process_id > 0)
+	{
+		wait(NULL);
+		free(buffer);
 	
 	i = 0;
 	while (ptr[i] != NULL)
@@ -105,7 +101,9 @@ int main(int ac, char **av, char **env)
 		free(ptr[i]);
 		++i;
 	}
-	free(ptr);
+		free(ptr);
+	}
+	
 	
 	return (0);
 	
