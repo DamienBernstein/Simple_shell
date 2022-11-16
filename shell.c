@@ -61,7 +61,8 @@ strcpy(ptr[i], token);
 token = strtok(NULL, delimeter);
 ++i;
 }
-free(str2);  
+free(str2);
+free(ptr[i]);
 }
 
 /**
@@ -168,7 +169,7 @@ main(ac, av, env);
 else
 {
 printf("%s: not found\n", str[0]);
-child_pid = fork();
+
 if (child_pid == 0)
 {
 execve(str[0], str, env);
@@ -205,6 +206,7 @@ wait(&status);
 free(buffer);
 free(str);
 free(path);
+free(str[0]);
 main(ac, av, env);
 }
 }
