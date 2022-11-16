@@ -213,7 +213,7 @@ else
 printf("%s: 1: %s: not found\n", av[0], str[0]);
 free(buffer);
 free(str);
-if (ac < 2)
+if (ac < 1)
 {
 main(ac, av, env);
 }
