@@ -175,18 +175,8 @@ if (child_pid == 0)
 execve(str[0], str, env);
 }
 
-if (child_pid != 0)
-{
-wait(&status);
-free(buffer);
-free(str);
-main(ac, av, env);
-}
-}
-}
-else
-{
-exists = searchforfunction(str[0], "/bin/");
+
+
 if (exists == 1)
 {
 path = calloc(strlen(oldpath) + strlen(str[0]) + 1, (sizeof(char)));
