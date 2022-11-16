@@ -175,6 +175,4 @@ if (child_pid == 0)
 execve(str[0], str, env);
 }
 }
-
-
-
+}
