@@ -61,7 +61,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 
 int main(int ac, char **av, char **env)
 {
-	char *buffer, **ptr;
+	char *buffer, **ptr, *PATH;
 	
 	int characters;
 	unsigned int args, i, count;
