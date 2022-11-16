@@ -77,7 +77,7 @@ int main(int ac, char **av, char **env)
 {
 	char *buffer, **ptr;
 	pid_t child_pid;
-	int characters;
+	int status, characters;
 	unsigned int args;
 	size_t size;
 	
@@ -95,9 +95,10 @@ int main(int ac, char **av, char **env)
 {
 printf("child");
 }
-	else
+	if (child_pid != 0)
 	{
-		wait();
+		wait(&status);
+		print("parent");
 		free(buffer);
 	}
 	
