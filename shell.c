@@ -57,14 +57,14 @@ int main(int ac, char **av, char **env)
 	
 	break_string(buffer, " ", ptr);
 	
-	printf("first arg %s", ptr[0]);
+	
 
 
 	
 	
 	
 	
-	
+	free(ptr);
 	free(buffer);
 	
 	return (0);
