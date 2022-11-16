@@ -52,6 +52,7 @@ int main(int ac, char **av, char **env)
 	if (child_pid == 0)
 {
 printf("child");
+		free(buffer);
 		exit(0);
 	
 }
