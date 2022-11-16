@@ -69,7 +69,7 @@ int main(int ac, char **av, char **env)
 	pid_t process_id;
 	
 
-	do {	
+		
 	size = 32;
 	
 	buffer = malloc(sizeof(char) * size);
@@ -83,6 +83,19 @@ int main(int ac, char **av, char **env)
 	ptr = calloc((count + 1), sizeof(char *));
 
 	break_string(buffer, " ", ptr);
+	if (strcmp(ptr[0], "exit") == 0)
+	{
+		free(buffer);
+	
+		i = 0;
+		while (ptr[i] != NULL)
+		{
+			free(ptr[i]);
+			++i;
+		}
+		free(ptr);
+		return (0);
+	}
 	
 	process_id = fork();
 	
@@ -104,16 +117,16 @@ int main(int ac, char **av, char **env)
 		wait(NULL);
 		free(buffer);
 	
-	i = 0;
-	while (ptr[i] != NULL)
-	{
-		free(ptr[i]);
-		++i;
-	}
+		i = 0;
+		while (ptr[i] != NULL)
+		{
+			free(ptr[i]);
+			++i;
+		}
 		free(ptr);
 	}
 	
-	} while (strcmp(ptr[0], "exit") != 0);
+	
 	return (0);
 	
 }
