@@ -56,7 +56,7 @@ int main(int ac, char **av, char **env)
 
 		
 	size = 32;
-	
+	ptr = NULL;
 	buffer = NULL;
 	printf("$ ");
 	characters = getline(&buffer, &size, stdin);
