@@ -148,8 +148,8 @@ int main(int ac, char **av, char **env)
 			j = 0;
 			while (paths[j] != NULL)
 			{
-				strcat(buffer_path, "/");
 				strcat(buffer_path, paths[j]);
+				strcat(buffer_path, "/");
 				strcat(buffer_path, ptr[0]);
 				printf("buffer_path: %s", buffer_path);
 				if (access(buffer_path, X_OK) == 0)
