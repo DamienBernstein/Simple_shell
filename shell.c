@@ -69,6 +69,7 @@ int main(int ac, char **av, char **env)
 	i = 0;
 	while (ptr[i] != NULL)
 	{
+		printf("ptr[i]: %s", ptr[i]);
 		free(ptr[i]);
 		++i;
 	}
