@@ -26,7 +26,9 @@ void break_string(char *str, char *delimeter, char **ptr)
 				++count;
 		}
 	ptr = malloc(sizeof(char *) * (count + 1));
+	
 	token = strtok(str2, delimeter);
+	printf("first one: %s", token);
 	while (token != NULL)
 	{
 		ptr[i] = malloc(sizeof(char) * strlen(token));
