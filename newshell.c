@@ -149,7 +149,7 @@ int main(int ac, char **av, char **env)
 			while (paths[j] != NULL)
 			{
 				buffer_path = path[j] + '/' + ptr[0];
-				if (access(buffer, X_OK)
+				if (access(buffer_path, X_OK)
 				++j;
 			}
 		}
