@@ -124,6 +124,7 @@ int main(int ac, char **av, char **env)
 			++i;
 		}
 		free(ptr);
+		main(ac, av, env);
 	}
 	
 	
