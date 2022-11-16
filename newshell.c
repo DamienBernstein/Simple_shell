@@ -77,7 +77,7 @@ int main(int ac, char **av, char **env)
 	
 	buffer = malloc(sizeof(char) * size);
 	
-	printf("ptr when init %p\n", ptr);
+	
 	printf("$ ");
 
 	characters = getline(&buffer, &size, stdin);
