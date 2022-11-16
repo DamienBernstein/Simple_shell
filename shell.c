@@ -7,10 +7,11 @@
 #include <sys/wait.h>
 #include <dirent.h>
 
-void *get_input(char *buffer, char *str3)
+void *get_input(char *buffer)
 {
 	int characters;
 	size_t size;
+	char buf[1024] = 0;
 
 	
 	size = 32;
@@ -28,16 +29,16 @@ void *get_input(char *buffer, char *str3)
 		
 	} while (characters == 1);
 	
-	str3 = malloc(sizeof(buffer));
-	strcpy(str3, buffer);
+	strcpy(buf, buffer);
 	free(buffer);
+	return (buf);
 }
 
 
 
 int main(int ac, char **av, char **env)
 {
-	char *buffer, **ptr, *str3;
+	char *buffer, **ptr, *str3, buf[1024];
 	pid_t child_pid;
 	int characters;
 	unsigned int args;
@@ -46,7 +47,7 @@ int main(int ac, char **av, char **env)
 	
 
 	
-	get_input(buffer, str3);
+	buf = get_input(buffer);
 	
 	
 
