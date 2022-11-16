@@ -41,8 +41,7 @@ void break_string(char *str, char *delimeter, char **ptr)
 		token = strtok(NULL, delimeter);
 		++i;
 	}
-	ptr[i - 1] = malloc(sizeof(char) * (strlen(token) + 1));
-	ptr[i - 1] = NULL;
+
 	free(str2);  
 	
 	
@@ -71,7 +70,7 @@ int main(int ac, char **av, char **env)
 		
 	
 	
-	printf("pointer %s", *ptr);
+	printf("pointer %s", ptr[0]);
 
 	
 	free(ptr);
