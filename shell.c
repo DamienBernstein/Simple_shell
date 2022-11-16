@@ -60,7 +60,6 @@ ptr[i] = malloc(sizeof(char) * strlen(token));
 strcpy(ptr[i], token);
 token = strtok(NULL, delimeter);
 ++i;
-free(ptr[i]);
 }
 free(str2);  
 }
@@ -203,7 +202,6 @@ if (child_pid != 0)
 wait(&status);
 free(buffer);
 free(str);
-free(path);
 main(ac, av, env);
 }
 }
@@ -212,6 +210,9 @@ else
 printf("%s: 1: %s: not found\n", av[0], str[0]);
 free(buffer);
 free(str);
+free(path);
+free(ptr[i]);
+free(str[0]);
 if (ac < 2)
 {
 main(ac, av, env);
