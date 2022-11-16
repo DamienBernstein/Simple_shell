@@ -61,7 +61,7 @@ strcpy(ptr[i], token);
 token = strtok(NULL, delimeter);
 ++i;
 }
-free(str2);  
+free(str2);
 }
 
 /**
