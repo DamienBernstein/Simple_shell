@@ -32,13 +32,11 @@ void break_string(char *str, char *delimeter, char **ptr)
 	ptr = malloc(sizeof(char *) * (count + 1));
 	
 	token = strtok(str2, delimeter);
-	printf("first one: %s\n", token);
 	while (token != NULL)
 	{
 		ptr[i] = malloc(sizeof(char) * strlen(token));
 		strcpy(ptr[i], token);
 		token = strtok(NULL, delimeter);
-		printf("next: %s\n", ptr[i]);
 		++i;
 	}
 	free(str2);  
@@ -50,12 +48,12 @@ int main(int ac, char **av, char **env)
 {
 	char *buffer, **ptr, *str3, buf[1024];
 	pid_t child_pid;
-	int characters;
+	int characters, i;
 	unsigned int args;
 	size_t size;
 	
 
-		
+	i = 0;	
 	size = 32;
 	
 	buffer = NULL;
@@ -67,9 +65,13 @@ int main(int ac, char **av, char **env)
 	
 
 
+	while (ptr[i] != NULL)
+	{
+		free(ptr[i]);
+		++i;
+	}
 	
-	
-	
+	free(ptr);
 	
 	
 	free(buffer);
