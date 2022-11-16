@@ -67,7 +67,7 @@ int main(int ac, char **av, char **env)
 	
 	
 	
-	free(ptr);
+	
 	free(buffer);
 	
 	return (0);
