@@ -65,10 +65,10 @@ int main(int ac, char **av, char **env)
 	printf("$ ");
 
 	characters = getline(&buffer, &size, stdin);
-		printf("pointer %s", ptr[0]);
+
 	break_string(buffer, " ", ptr);
 	
-	
+	printf("pointer %s", ptr[0]);
 	
 	
 
