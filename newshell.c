@@ -17,7 +17,7 @@ void break_string(char *str, char *delimeter, char **ptr, char **env)
 
 	j = 0;
 	count  = 1;
-	str2 = malloc(sizeof(char) * (strlen(str) - 1));
+	str2 = calloc((strlen(str) - 1), sizeof(char));
 	while (str[j] != '\n' && str[j] != '\0')
 		{
 			str2[j] = str[j];
