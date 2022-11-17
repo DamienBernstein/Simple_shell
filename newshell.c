@@ -158,8 +158,8 @@ int main(int ac, char **av, char **env)
 				}
 				else
 				{
-					for(k = 0; k < sizeof(buffer); ++k)
-						buffer[k] = 0;
+					for(k = 0; k < 1024; k++)
+						buffer_path[k] = 0;
 				}
 				++j;
 			}
