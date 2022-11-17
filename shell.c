@@ -117,9 +117,8 @@ int main(int ac, char **av, char **env)
 	
 	if (isatty(STDIN_FILENO) == 0)
 	{
-		printf("this is a terminal");
 		read(0, buffer_term, 25);
-		printf("%c\n", buffer_term[0]);
+		printf("%c\n", buffer_term[2]);
 		return (0);
 	}
 	
