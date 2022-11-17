@@ -117,8 +117,60 @@ int main(int ac, char **av, char **env)
 	
 	if (isatty(STDIN_FILENO) == 0)
 	{
-		read(0, buffer_term, 25);
-		printf("%s\n", buffer_term);
+		read(0, buffer_term, 1024);
+		
+		PATH = getenv("PATH");
+		countpaths = count_args(PATH, ':');
+	
+		paths = calloc((countpaths + 1), sizeof(char *));
+		break_string(PATH, ":", paths);
+		
+		count = count_args(buffer_term, ' ');
+		ptr = calloc((count + 1), sizeof(char *));
+		break_string(buffer_term, " ", ptr);
+		
+		if (access(ptr[0], X_OK) == 0)
+		{
+		execve(ptr[0], ptr, env);
+		} else
+		{
+			j = 0;
+			while (paths[j] != NULL)
+			{
+				strcat(buffer_path, paths[j]);
+				strcat(buffer_path, "/");
+				strcat(buffer_path, ptr[0]);
+				
+				if (access(buffer_path, X_OK) == 0)
+				{
+					execve(buffer_path, ptr, env);
+				}
+				else
+				{
+					for(k = 0; k < 1024; k++)
+						buffer_path[k] = 0;
+				}
+				++j;
+			}
+			printf("%s: 1: %s: not found\n", av[0], ptr[0]);
+		}
+		free(buffer);
+	
+		i = 0;
+		while (ptr[i] != NULL)
+		{
+			free(ptr[i]);
+			++i;
+		}
+		free(ptr);
+		i = 0;
+		while (paths[i] != NULL)
+		{
+			free(paths[i]);
+			++i;
+		}
+		free(paths);
+		
 		return (0);
 	}
 	
