@@ -115,6 +115,12 @@ int main(int ac, char **av, char **env)
 	size_t size;
 	pid_t process_id;
 	
+	if (isatty() == 1)
+	{
+		printf("this is a terminal");
+		return (0);
+	}
+	
 	PATH = getenv("PATH");
 	
 	
@@ -215,7 +221,7 @@ int main(int ac, char **av, char **env)
 		
 	}
 
-	if (process_id > 0 && ac < 2)
+	if (process_id > 0)
 	{
 		wait(NULL);
 		free(buffer);
