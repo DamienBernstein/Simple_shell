@@ -17,10 +17,10 @@
 int count_args(char *str, char c)
 {
 	int count, j;
-	
+
 	count = 1;
 	j = 0;
-	
+
 	while (str[j] != '\n' && str[j] != '\0')
 		{
 			++j;
