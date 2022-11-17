@@ -86,7 +86,7 @@ int main(int ac, char **av, char **env)
 	char *buffer, **ptr, *PATH, **paths, buffer_path[1024] = {0};
 	
 	int characters, j, k;
-	unsigned int args, i, count, countpaths;
+	unsigned int i, count, countpaths;
 	size_t size;
 	pid_t process_id;
 	
