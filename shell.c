@@ -108,7 +108,7 @@ return (0);
  */
 int main(int ac, char **av, char **env)
 {
-	char *buffer, **ptr, *PATH, **paths, buffer_path[1024] = {0};
+	char *buffer, **ptr, *PATH, **paths, buffer_path[1024] = {0}, buffer_term[1024] = {0};
 	
 	int characters, j, k;
 	unsigned int i, count, countpaths;
@@ -118,6 +118,8 @@ int main(int ac, char **av, char **env)
 	if (isatty(STDIN_FILENO) == 0)
 	{
 		printf("this is a terminal");
+		read(0, buffer_term, 25);
+		printf("%c\n", buffer_term[0]);
 		return (0);
 	}
 	
