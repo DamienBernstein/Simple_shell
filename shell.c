@@ -115,7 +115,7 @@ int main(int ac, char **av, char **env)
 	size_t size;
 	pid_t process_id;
 	
-	if (isatty(fd) == 1)
+	if (isatty(STDIN_FILENO) == 1)
 	{
 		printf("this is a terminal");
 		return (0);
