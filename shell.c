@@ -215,7 +215,7 @@ int main(int ac, char **av, char **env)
 		
 	}
 
-	if (process_id > 0 && ac > 1)
+	if (process_id > 0 && ac > 2)
 	{
 		wait(NULL);
 		free(buffer);
