@@ -118,7 +118,7 @@ int main(int ac, char **av, char **env)
 	if (isatty(STDIN_FILENO) == 0)
 	{
 		read(0, buffer_term, 25);
-		printf("%c\n", buffer_term[2]);
+		printf("%s\n", buffer_term);
 		return (0);
 	}
 	
