@@ -110,12 +110,12 @@ int main(int ac, char **av, char **env)
 {
 	char *buffer, **ptr, *PATH, **paths, buffer_path[1024] = {0};
 	
-	int characters, j, k;
+	int characters, j, k, fd;
 	unsigned int i, count, countpaths;
 	size_t size;
 	pid_t process_id;
 	
-	if (isatty() == 1)
+	if (isatty(fd) == 1)
 	{
 		printf("this is a terminal");
 		return (0);
