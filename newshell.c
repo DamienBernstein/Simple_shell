@@ -109,6 +109,11 @@ int main(int ac, char **av, char **env)
 	printf("$ ");
 
 	characters = getline(&buffer, &size, stdin);
+	if (characters == -1)
+{
+printf("\n");
+return (0);
+}
 	
 	count = count_args(buffer, ' ');
 	
