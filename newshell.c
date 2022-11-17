@@ -109,11 +109,12 @@ int main(int ac, char **av, char **env)
 	printf("$ ");
 
 	characters = getline(&buffer, &size, stdin);
+	
 	if (characters == -1)
-{
-printf("\n");
-return (0);
-}
+	{
+		printf("\n");
+		return (0);
+	}
 	
 	count = count_args(buffer, ' ');
 	
@@ -168,7 +169,7 @@ return (0);
 				}
 				++j;
 			}
-			printf("function not found");
+			printf("%s: 1: %s: not found\n", av[0], ptr[0]);
 		}
 		free(buffer);
 	
